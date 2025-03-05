@@ -1,0 +1,17 @@
+/*program to demonstrate the working of default constructor in cpp*/
+
+#include<iostream>
+using namespace std;
+class A
+{
+    public: A()
+    {
+        cout<<"Default constructor";
+    }
+};
+int main()
+{
+    A obj;
+    return 0;
+}
+
