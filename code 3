@@ -1,0 +1,19 @@
+//program to create a class and a function to accept the username and password as parameter.
+//function with no return type and parameter.
+
+#include<iostream>
+using namespace std;
+class program
+{
+    public : void Accept(string username, string password)
+    {
+        cout<<"Username: "<<username;
+        cout<<"\nPassword: "<<password;
+    }
+};
+int main()
+{
+    program obj;
+    obj.Accept("abc@gmail.com","123456789");
+    return 0;
+}
