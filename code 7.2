@@ -1,0 +1,30 @@
+/*wap to create a class with name area and with constructor which set default radius=10 and create a function calculate()
+which calculate area of circle*/
+
+#include <iostream>
+using namespace std;
+
+class Area {
+    double radius;
+
+public:
+    // Constructor with default radius value
+    Area(double r = 10) {
+        radius = r;
+    }
+
+    // Function to calculate and display area
+    void calculate() {
+        cout << "Area of Circle: " << 3.1416 * radius * radius << endl;
+    }
+};
+
+int main() {
+    Area a1;      // Default radius 10
+    a1.calculate();
+
+    Area a2(5);   // Custom radius 5
+    a2.calculate();
+
+    return 0;
+}
