@@ -1,0 +1,87 @@
+/*wap to 
+a) create a class with name bankapp
+b) create a parameterized constructor of this class, that initialize class attributes like, productid,product name, product price
+c) implement display function to display all records
+d) update function to change product price
+e) create array of object to store product information of 5 different products
+f) accept productid from user and change price of that product only
+g) display product not exist, if user enter incorrect productid.*/
+
+#include <iostream>
+using namespace std;
+
+class BankApp 
+{
+public:
+    int productid;
+    string productname;
+    double productprice;
+
+    BankApp(int productid, string productname, double productprice) 
+    {
+        cout<<"productid is "<<productid<<endl;
+        cout<<"productname is "<<productname<<endl;
+        cout<<"productprice is "<<productprice<<endl;
+    }
+
+    void display() 
+    {
+        cout << "ID: " << productid << ", Name: " << productname << ", Price: " << productprice << endl;
+    }
+
+    void updatePrice(double newPrice) 
+    {
+        productprice = newPrice;
+    }
+};
+
+int main() 
+{
+    BankApp products[] = 
+    {
+        BankApp(1, "Product A", 100.0),
+        BankApp(2, "Product B", 200.0),
+        BankApp(3, "Product C", 300.0),
+        BankApp(4, "Product D", 400.0),
+        BankApp(5, "Product E", 500.0)
+    };
+
+    cout << "All Product Information:" << endl;
+    for (int i = 0; i < 5; i++) 
+    {
+        products[i].display();
+    }
+
+    int productId;
+    cout << "Enter Product ID to update price: ";
+    cin >> productId;
+
+    bool found = false;
+    for (int i = 0; i < 5; i++) 
+    {
+        if (products[i].productid == productId) 
+        {
+            double newPrice;
+            cout << "Enter new price: ";
+            cin >> newPrice;
+            products[i].updatePrice(newPrice);
+            found = true;
+        }
+    }
+
+    if (!found) 
+    {
+        cout << "Product not found." << endl;
+    } else 
+    {
+        cout << "Updated Product Information:" << endl;
+        for (int i = 0; i < 5; i++) 
+        {
+            products[i].display();
+        }
+    }
+
+    return 0;
+}
+
+
