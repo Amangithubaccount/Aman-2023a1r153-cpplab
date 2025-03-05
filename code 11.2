@@ -1,0 +1,29 @@
+/*syntax of array of objects 
+classname object name dimension[]
+example:- basic array of objects*/
+
+#include<iostream>
+using namespace std;
+class books_management_system
+{
+    private:int bookid;
+    string bookname;
+    public: books_management_system(int id, string name) //parameterized constructor
+    {
+        bookid=id;
+        bookname=name;
+    }
+    public:void display()
+    {
+        cout<<"book id is"<<bookid<<"\t book name is"<<bookname<<endl;
+    }
+};
+int main()
+{
+    books_management_system obj[5]= {{1,"cpp"},{2,"c"},{3,"c#"},{4,"php"},{5,"java"}};
+    int i;
+    for(i=0;i<5;i++)
+    {
+        obj[i].display();
+    }
+}
