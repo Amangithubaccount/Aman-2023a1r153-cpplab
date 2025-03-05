@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+class program
+{
+    public : void Accept(string username, string password)//formal parameter
+    {
+        cout<<"Username: "<<username;
+        cout<<"\nPassword: "<<password;
+    }
+};
+int main()
+{
+    program obj;
+    string username1,password1;
+    cout<<"\nEnter the username and password";
+    cin>>username1>>password1;
+    obj.Accept("username1","password1"); //actual parameter
+    return 0;
+}
