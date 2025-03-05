@@ -1,0 +1,36 @@
+/*create employee_management_system
+create a parameterized constructor to initialize user information like empid, empname. 
+create a member function to display user record.
+use array of objects to store and display record of 5 employee*/
+
+#include<iostream>
+using namespace std;
+class employee_management_system
+{
+    private:int empid;
+    string empname;
+    public:void accept()
+    {
+        cout<<"\n enter emp id";
+        cin>>empid;
+        cout<<"\n enter emp name";
+        cin>>empname;
+    }
+    public:void display()
+    {
+        cout<<"emp id is"<<empid<<"\t emp name is"<<empname<<endl;
+    }
+};
+int main()
+{
+    employee_management_system obj[5];
+    int i;
+    for(i=0;i<5;i++)
+    {
+        obj[i].accept();
+    }
+    for(i=0;i<5;i++)
+    {
+        obj[i].display();
+    }
+}
