@@ -1,0 +1,70 @@
+/*wap to create two classes 
+1. class login_details, with function as
+a) validate() accept login password(default 1234) from user
+b) display() message on screen "welcome to Myapp
+
+2. class user_profile
+a) accept() accept username, id, name from user
+b) display() will display information entered by user on screen*/
+
+#include<iostream>
+using namespace std;
+class login_details
+{
+    private: int password;
+    public: int password_validate()
+    {
+        cout<<"enter password";
+        cin>>password;
+        if(password==1234){
+            cout<<"\nlogin successful";
+            display();
+            return 1;
+        }
+        else {
+            cout<<"\n incorrect password";
+           return 0;
+
+        }
+    }
+    public:void display()
+    {
+        cout<<"\nwelcome to Myapp";
+    }
+};
+class user_profile
+{
+    private: string Username;
+    string id;
+    string Name;
+
+    public:void accept()
+    {
+    cout<<"\nUsername";
+    cin>>Username;
+    cout<<"\nid";
+    cin>>id;
+    cout<<"\nName";
+    cin>>Name;
+    }
+    public:void display()
+    {
+        cout<<"Username="<<Username;
+        cout<<"id="<<id;
+        cout<<"Name="<<Name;
+    }
+
+};
+int main()
+{
+    login_details obj1;
+    user_profile obj2;
+    int n;
+    n=obj1.password_validate();
+    if(n==1)
+    {
+    obj2.accept();
+    obj2.display();
+    }
+    return 0;
+}
