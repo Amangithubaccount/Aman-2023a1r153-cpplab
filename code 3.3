@@ -1,0 +1,32 @@
+//program to create a class and 2 function, function will accept pin(default 123) and validate pin then accept() function
+//accept username and password
+
+#include<iostream>
+using namespace std;
+class program
+{
+    private : int pin;
+    string username1,password1;
+    public : void pin_validate()
+    {
+        cout<<"enter pin";
+        cin>>pin;
+        if(pin==123){
+            cout<<"login successful";
+            cout<<"\n enter username and password";
+            cin>>username1>>password1;
+            Accept(username1,password1);
+        }
+    }
+    public : void Accept(string username, string password)
+    {
+        cout<<"Username: "<<username;
+        cout<<"\nPassword: "<<password;
+    }
+};
+int main()
+{
+    program obj;
+    obj.pin_validate();
+    return 0;
+}
