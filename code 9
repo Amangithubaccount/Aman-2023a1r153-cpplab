@@ -1,0 +1,44 @@
+/*program to demonstrate working of function overloading and constructor overloading. 
+create a class with name loginapp ,with function name register(), overload this function three times in this program.
+1. register function will accept user name and display "hi" message with username.
+2. register function will accept registration number and validate registration number between (1-50).
+3. register function will accept marks and calculate credits, for every 10 marks, provide 1 credit(max.-100).
+4. create default constructor of class, display message "welcome to loginapp.
+5. create parameterized constructor of class, that accept login credentials, like login pin.*/
+
+#include <iostream>
+using namespace std;
+
+class LoginApp {
+public:
+    // Default constructor
+    LoginApp() { cout << "Welcome to LoginApp" << endl; }
+
+    // Parameterized constructor
+    LoginApp(int pin) { cout << "Logged in with PIN: " << pin << endl; }
+
+    // Function overloading for register()
+    void registerUser(string name) { cout << "Hi, " << name << "!" << endl; }
+
+    void registerUser(int regNo) {
+        cout << ((regNo >= 1 && regNo <= 50) ? "Valid registration!" : "Invalid registration!") << endl;
+    }
+
+    void registerUser(double marks) { cout << "Credits: " << min(10, (int)marks / 10) << endl; }
+};
+
+int main() {
+    LoginApp user1;  
+    user1.registerUser("Alice");
+    user1.registerUser(25);
+    user1.registerUser(87.5);
+
+    cout << endl;
+
+    LoginApp user2(1234);
+    user2.registerUser("Bob");
+    user2.registerUser(60);
+    user2.registerUser(105);
+
+    return 0;
+}
