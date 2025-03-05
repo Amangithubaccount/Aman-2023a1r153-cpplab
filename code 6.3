@@ -1,0 +1,44 @@
+/*example program on constructor :-
+wap to create a class with name Bankapp, with function account_details(), this function will update user profile like,
+account holder name and account number
+1/) display a message on screen "welcome to bank", without calling any function.
+2) pass account holder name and account number to account_details() using constructor
+default values :- name is "user01" and account number "001"*/
+
+
+#include <iostream>
+using namespace std;
+
+class Bankapp {
+public:
+    string name;
+    string account_number;
+
+    // Constructor to initialize values
+    Bankapp(string n = "user01", string acc = "001") {
+        name = n;
+        account_number = acc;
+        cout << "Welcome to Bank" << endl;  // Display message on screen
+    }
+
+    // Function to update and display account details
+    void account_details() {
+        cout << "Account Holder: " << name << endl;
+        cout << "Account Number: " << account_number << endl;
+    }
+};
+
+int main() {
+    // Creating object with default values
+    Bankapp user1;
+    user1.account_details();
+
+    cout << endl;
+
+    // Creating object with custom values
+    Bankapp user2("Alice", "12345");
+    user2.account_details();
+
+    return 0;
+}
+
