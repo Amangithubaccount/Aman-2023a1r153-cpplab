@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class A
+{
+    public:static int a;  //normal member variable
+    A()  //class constructor
+    {
+        a++;  //incrementing value of a inside constructor
+    }
+};
+int A::a=0;
+int main()
+{
+    A obj1; //first object of class
+    cout<<"\n value of a is "<<obj1.a; //accessing member variable using object of class
+    A obj2; //second object of class
+    cout<<"\n value of a is "<<obj2.a; //accessing member variable using object of class
+    cout<<"\n final value of a is "<<A::a;
+    return 0;
+}
